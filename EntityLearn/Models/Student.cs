@@ -1,4 +1,4 @@
-﻿using MessagePack;
+﻿
 using System.ComponentModel.DataAnnotations;
 
 namespace EntityLearn.Models
@@ -11,16 +11,28 @@ namespace EntityLearn.Models
 
         [Required(ErrorMessage = "Enter Name")]
         [StringLength(250, ErrorMessage = "name must be less than or equals to 250 charcter")]
-        public string StudentName { get; set;}
+        public string StudentName { get; set; } = null!;
 
 
-        [Required(ErrorMessage ="Enter Enrollment no")]
+        [Required(ErrorMessage = "Enter Enrollment no")]
+        [Range(1, 12, ErrorMessage = "{0} must between {1} to {2}")]
         public int EnrollmentNo { get; set; }
-        public string Address { get; set; }
+        
 
-        public string StudentEmail { get; set;}
-        public string ContactNo { get; set;}
-        public DateTime BirthDate { get; set;}
+        [Required(ErrorMessage = "Enter Plase Address")]
+        [StringLength(250, ErrorMessage = "Address must be less than or equals to 250 charcter")]
+        public string Address { get; set; } = null!;
+
+
+        [Required(ErrorMessage ="Enter Email")]
+        [EmailAddress(ErrorMessage = "Invalid Email")]
+        public string StudentEmail { get; set;} = null!;
+
+        [Required(ErrorMessage = "Enter Contact No")]
+        [StringLength(50, ErrorMessage = "Contact no must be less than or quals to 50 charcter")]
+        public string ContactNo { get; set; } = null!;
+
+        
 
 
 
