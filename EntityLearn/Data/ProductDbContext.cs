@@ -6,7 +6,7 @@ namespace EntityLearn.Data
 {
     public class ProductDbContext : DbContext
     {
-        private DbSet<Student> students;
+        
 
         public ProductDbContext(DbContextOptions<ProductDbContext> options) : base(options)
         {
