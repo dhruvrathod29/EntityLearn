@@ -33,7 +33,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ContactNo)
             </th>
-            <th></th>
+            <th>Action</th>
+            <th>Action</th>
+
         </tr>
     </thead>
     <tbody>
@@ -57,11 +59,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ContactNo)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+                <td>
+                    <a class="btn btn-success" asp-controller="Student" asp-action="Update" asp-route-id="@item.StudentID">Update</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-controller="Student" asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
+                </td>
         </tr>
 }
     </tbody>
